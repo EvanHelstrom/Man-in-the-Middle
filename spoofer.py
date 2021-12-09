@@ -65,13 +65,13 @@ def user_welcome():
     print("                                     |_| ")
     print("Welcome to the spoofer. There are two options for spoofing, listed below:")
     print("(1) for bi-directional spoofing\n(2) for single-directional spoofing")
-    direction = input("Type 1 or 2 to choose your configuration: ")
+    direction = raw_input("Type 1 or 2 to choose your configuration: ")
     print("Which local user would you like to target?")
-    target = input("Please enter their local IP: ")
+    target = raw_input("Please enter their local IP: ")
     print("What internet host would you like to impersonate?")
-    host = input("Please enter the host's IP address: ")
+    host = raw_input("Please enter the host's IP address: ")
     print("How long would you like the spoof to run?")
-    selection = int(input("(1) for 50 cycles, (2) for 250 cycles, (3) for 500 cycles, (4) to cycle until termination: "))
+    selection = int(raw_input("(1) for 50 cycles, (2) for 250 cycles, (3) for 500 cycles, (4) to cycle until termination: "))
     if selection == 1:
         runs = 50
     elif selection == 2:
